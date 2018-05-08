@@ -16,15 +16,15 @@ int main() {
         "2543BHY"
     };
     int lista_ok = -1;
-    //------------- My tests ----------------------------------------------
+    /*//------------- My tests ----------------------------------------------
     test = aniadirPrincipio(&lista, mat[0]);
     test = aniadirPrincipio(&lista, mat[1]);
     test = aniadirPrincipio(&lista, mat[2]);
     test = aniadirPrincipio(&lista, mat[3]);
     test = aniadirPrincipio(&lista, mat[4]);
 
-    listar(lista);
-/*    //------------- Testeando prueba de errores ---------------------------
+    listar(lista);*/
+    //------------- Testeando prueba de errores ---------------------------
     test = aniadirPrincipio(0, mat[0]);
     if(test != -1)
     {
@@ -106,77 +106,75 @@ int main() {
     }
 
     //------------- Testeando listas ---------------------------
-    for (i = 0; i < 3; i++) {
-        printf("-----------------------------\n");
+  for (i = 0; i < 3; i++) {
+    printf("-----------------------------\n");
+    test = modificar(&lista, mat[1], mat[3]);
+    printf("Modificar(%s,%s):%d\n", mat[1], mat[3], test);
+    listar(lista);
 
-        test = modificar(&lista, mat[1], mat[3]);
-        printf("Modificar(%s,%s):%d\n", mat[1], mat[3], test);
-        listar(lista);
+    if(i==0 && test!=-1)
+    {
+    printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
+    exit(-1);
+    }
+    else if(i==1 && test!=-1)
+    {
+    printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
+    exit(-1);
+    }
+    test = borrarAlPrincipio(&lista);
+    printf("BorrarAlPrincipio:%d\n", test);
+    listar(lista);
 
-	if(i==0 && test!=-1)
-	{
-	  printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
-	  exit(-1);
-	}
-	else if(i==1 && test!=-1)
-	{
-	  printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
-	  exit(-1);
-	}
+    if(i==0 && test!=-1)
+    {
+    printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
+    exit(-1);
+    }
+    test = borrarNodo(&lista, mat[2]);
+    printf("Borrar(%s):%d\n", mat[2], test);
+    listar(lista);
 
-        test = borrarAlPrincipio(&lista);
-        printf("BorrarAlPrincipio:%d\n", test);
-        listar(lista);
-
-	if(i==0 && test!=-1)
-	{
-	  printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
-	  exit(-1);
-	}
-
-        test = borrarNodo(&lista, mat[2]);
-        printf("Borrar(%s):%d\n", mat[2], test);
-        listar(lista);
-
-	if(i==0 && test!=-1)
-	{
-	  printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
-	  exit(-1);
-	}
-	else if(i==1 && test!=-1)
-	{
-	  printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
-	  exit(-1);
-	}
-
-
-        test = aniadirPrincipio(&lista, mat[i]);
-        printf("Aniadir(%s):%d\n", mat[i], test);
-
-        if (i == 1) {
-            for (j = 0; j < NUM_MAT; j++) {
-                test = aniadirPrincipio(&lista, mat[j]);
-                printf("Aniadir(%s):%d\n", mat[j], test);
-            }
-        }
-	printf("Lista:\n");
-        listar(lista);
-	lista_ok = validarLista(&lista, i);
-        if (lista_ok == 1)
-	{
-	  printf("Lista OK\n");
-	}
-	else
-	{
-	  printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
-	  exit(-1);
-	}
-
+    if(i==0 && test!=-1)
+    {
+    printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
+    exit(-1);
+    }
+    else if(i==1 && test!=-1)
+    {
+    printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
+    exit(-1);
     }
 
+
+    test = aniadirPrincipio(&lista, mat[i]);
+    printf("Aniadir(%s):%d\n", mat[i], test);
+
+    if (i == 1) {
+    for (j = 0; j < NUM_MAT; j++) {
+        test = aniadirPrincipio(&lista, mat[j]);
+        printf("Aniadir(%s):%d\n", mat[j], test);
+    }
+    }
+    printf("Lista:\n");
+    listar(lista);
+    lista_ok = validarLista(&lista, i);
+    if (lista_ok == 1)
+    {
+    printf("Lista OK\n");
+    }
+    else
+    {
+     printf("Error en %s en la línea %d,  práctica no apta!!!!\n",  __FILE__, __LINE__);
+      exit(-1);
+     }
+}
+  printf("Sorting tests!\n#################################\n");
+    listar(lista);
     test = ordenarLista(&lista, ASC);
     printf("ordenarLista Asc:%d\n", test);
     listar(lista);
+
     lista_ok = validarLista(&lista, 3);
         if (lista_ok == 1)
 	{
@@ -248,7 +246,7 @@ int main() {
     listar(lista);
 
     printf("\n\n\t\t Práctica Apta!!!\n\n");
-*/
+
     return 0;
 }
 

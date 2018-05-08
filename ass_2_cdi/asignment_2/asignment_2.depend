@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1506697386 source:/home/pablo/Programming/ass_2_cdi/asignment_2/main.c
+	<stdio.h>
+	<stdlib.h>
+

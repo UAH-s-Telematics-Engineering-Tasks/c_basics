@@ -32,6 +32,5 @@ int realizarOperacion(double op1, double op2, char operacion)
     default:
       return -1;
   }
-  printf("Operation: %g %c %g\n", op1, operacion, op2);
   return result;
 }
