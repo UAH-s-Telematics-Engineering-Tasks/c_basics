@@ -1,2 +1,2 @@
-# c_basics
+# C basics
 C code regarding basic structures, pointers, arrays...
